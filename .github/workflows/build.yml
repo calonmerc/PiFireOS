@@ -39,7 +39,7 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        sudo bash -x ./build_dist
+        sudo bash -x ./build_custom_os
     - name: Copy output
       id: copy
       run: |
