@@ -44,18 +44,20 @@ jobs:
         sudo modprobe loop
         cd repository/src
         sudo bash -x ./build_dist
+
     - name: Copy output
       id: copy
       run: |
         source repository/src/config
         NOW=$(date +"%Y-%m-%d-%H%M")
-        IMAGE=$NOW-PiFireOS-$DIST_VERSION
-        cp repository/src/workspace/*.img $IMAGE.img
-        echo "::set-output name=image::$IMAGE"
+        echo "image=$NOW-PiFireOS-$DIST_VERSION" >> $GITHUB_ENV
+        cp repository/src/workspace/*.img ${{ env.image }}.img
+        echo "::set-output name=image::${{ env.image }}"
+
     # artifact upload will take care of zipping for us
     - uses: actions/upload-artifact@v3.1.2
       if: github.event_name == 'schedule'
       with:
-        name: ${{ steps.copy.outputs.image }}
-        path: ${{ steps.copy.outputs.image }}.img
+        name: ${{ env.image }}
+        path: ${{ env.image }}.img
         
