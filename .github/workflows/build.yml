@@ -49,9 +49,10 @@ jobs:
       id: copy
       run: |
         source repository/src/config
-        NOW=$(date +"%Y-%m-%d-%H%M")
-        echo "image=$NOW-PiFireOS-$DIST_VERSION" >> $GITHUB_ENV
-        cp repository/src/image/*.img ${{ env.image }}.img
+        now=$(date +"%Y-%m-%d-%H%M")
+        image=$now-PiFireOS-$DIST_VERSION
+        cp repository/src/workspace/*.img ${image}.img
+        echo "image=${image}" >> $GITHUB_ENV
 
     # artifact upload will take care of zipping for us
     - uses: actions/upload-artifact@v3.1.2
