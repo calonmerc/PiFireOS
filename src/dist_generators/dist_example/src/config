@@ -1,3 +1,0 @@
-export DIST_NAME=ExampleOS
-export DIST_VERSION=0.1
-export MODULES="base(network,example)"
