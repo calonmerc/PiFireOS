@@ -1,0 +1,67 @@
+#!/bin/bash
+#### PiFire - A pellet grill/smoker management utility.
+####
+#### PiFire is written by Ben Parmeter aka nebhead
+#### Copyright 2020 - 2023
+#### https://github.com/nebhead/PiFire
+####
+#### PiFireOS build files written by Kyle Menigoz aka CalonMerc
+#### Based on the fantastic work of CustomPiOS by Guy Sheffer aka guysoft
+####
+#### This File is distributed under MIT License
+####
+set -x
+set -e
+
+export LC_ALL=C
+
+source /common.sh
+
+# Set /tmp to RAM based storage in /etc/fstab 
+echo "tmpfs /tmp  tmpfs defaults,noatime 0 0" | sudo tee -a /etc/fstab > /dev/null
+
+apt update
+
+apt upgrade -y
+
+apt install python3-dev python3-pip python3-pil libfreetype6-dev libjpeg-dev build-essential libopenjp2-7 libtiff5 nginx git gunicorn3 supervisor ttf-mscorefonts-installer redis-server -y
+apt install python3-rpi.gpio -y
+pip3 install flask
+pip3 install flask-mobility
+pip3 install flask-qrcode
+pip3 install flask-socketio
+pip3 install eventlet==0.30.2
+pip3 install gpiozero
+pip3 install redis
+pip3 install uuid
+pip3 install influxdb-client[ciso]
+pip3 install apprise
+
+# Configure config.txt to enable SPI and i2c
+echo "dtparam=spi=on" | $SUDO tee -a /boot/config.txt > /dev/null
+echo "dtparam=i2c_arm=on" | $SUDO tee -a /boot/config.txt > /dev/null
+echo "i2c-dev" | $SUDO tee -a /etc/modules > /dev/null
+
+# Download PiFire
+cd /usr/local/bin
+if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
+    git clone --depth 1 ${PIFIRE_REPO_URL}
+else
+    git clone --depth 1 --branch ${PIFIRE_REPO_BRANCH} ${PIFIRE_REPO_URL}
+fi
+
+#Configure Nginx
+rm /etc/nginx/sites-enabled/default
+cp ${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
+ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
+
+#Configure Supervisor
+cp ${PIFIRE_SUPERVISORD_CONFIG_PATH}/*.conf /etc/supervisor/conf.d/
+
+if [[ ${PIFIRE_SUPERVISORD_ENABLE_UI} = "ENABLE_SVISOR" ]];then
+   echo " " | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
+   echo "[inet_http_server]" | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
+   echo "port = 9001" | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
+   echo "username = " ${PIFIRE_SUPERVISORD_DEFAULT_USER} | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
+   echo "password = " ${PIFIRE_SUPERVISORD_DEFAULT_PASS} | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
+fi

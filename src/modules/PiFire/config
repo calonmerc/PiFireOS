@@ -1,0 +1,21 @@
+#!/bin/bash
+#### PiFire - A pellet grill/smoker management utility.
+####
+#### PiFire is written by Ben Parmeter aka nebhead
+#### Copyright 2020 - 2023
+#### https://github.com/nebhead/PiFire
+####
+#### PiFireOS build files written by Kyle Menigoz aka CalonMerc
+#### Based on the fantastic work of CustomPiOS by Guy Sheffer aka guysoft
+####
+#### This File is distributed under MIT License
+####
+
+[[ -n "$PIFIRE_REPO_URL" ]] || PIFIRE_REPO_URL="https://github.com/nebhead/PiFire.git"
+[[ -n "$PIFIRE_REPO_BRANCH" ]] || PIFIRE_REPO_BRANCH="master"
+
+[[ -n "$PIFIRE_NGINX_CONFIG_PATH" ]] || PIFIRE_NGINX_CONFIG_PATH="auto-install/nginx"
+[[ -n "$PIFIRE_SUPERVISORD_CONFIG_PATH" ]] || PIFIRE_SUPERVISORD_CONFIG_PATH="auto-install/supervisor"
+[[ -n "$PIFIRE_SUPERVISORD_ENABLE_UI" ]] || PIFIRE_SUPERVISORD_CONFIG_PATH="ENABLE_SVISOR"
+[[ -n "$PIFIRE_SUPERVISORD_DEFAULT_USER" ]] || PIFIRE_SUPERVISORD_DEFAULT_USER="pifire"
+[[ -n "$PIFIRE_SUPERVISORD_DEFAULT_PASS" ]] || PIFIRE_SUPERVISORD_DEFAULT_PASS="PiFire"

@@ -1,8 +1,8 @@
 export DIST_NAME=PiFireOS
 export DIST_VERSION=0.1.0
 export MODULES="base(auto-hotspot, network, password-for-sudo, usage-statistics)"
-BASE_OVERRIDE_HOSTNAME=hotspot
-AUTO_HOTSPOT_NAME=hotspot
+BASE_OVERRIDE_HOSTNAME=PiFireOS
+AUTO_HOTSPOT_NAME=PiFire-Hotspot
 
 export RPI_IMAGER_NAME="${DIST_NAME} version ${DIST_VERSION}"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/nebhead/PiFire/main/static/img/launcher-icon-2x.png"
