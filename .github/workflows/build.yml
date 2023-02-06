@@ -41,7 +41,7 @@ jobs:
     
     - name: Build Image
       run: |
-        PIFIRE_REPO_BRANCH=development
+        export PIFIRE_REPO_BRANCH="development"
         sudo modprobe loop
         cd repository/src
         sudo bash -x ./build_dist
