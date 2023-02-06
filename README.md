@@ -57,7 +57,7 @@ Download the latest nightly builds (via Actions artifacts):
 
 * [PiFire](https://nebhead.github.io/PiFire/) software for managing and controlling pellet smokers
 * [Supervisor](http://supervisord.org/) software for managing gui and control processes
-* [hostasp](https://w1.fi/hostapd/) software for managing automatic hotspot
+* [hostapd](https://w1.fi/hostapd/) software for managing automatic hotspot
 
 ## Developing
 
