@@ -1,0 +1,71 @@
+name: Build Release Image
+
+on:
+  workflow_dispatch:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update Dependencies
+      run: |
+        sudo apt update
+    - name: Install Dependencies
+      run: |
+        sudo apt install coreutils p7zip-full qemu-user-static
+
+    - name: Checkout CustomPiOS
+      uses: actions/checkout@v3.3.0
+      with:
+        repository: 'guysoft/CustomPiOS'
+        path: CustomPiOS
+
+    - name: Checkout Project Repository
+      uses: actions/checkout@v3.3.0
+      with:
+        path: repository
+        submodules: true
+
+    - name: Download Raspbian Image
+      run: |
+        cd repository/src/image
+        wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
+
+    - name: Update CustomPiOS Paths
+      run: |
+        cd repository/src
+        ../../CustomPiOS/src/update-custompios-paths
+    
+    - name: Build Image
+      run: |
+        PIFIRE_REPO_BRANCH=master
+        sudo modprobe loop
+        cd repository/src
+        sudo bash -x ./build_dist
+
+    - name: Copy Output
+      id: copy
+      run: |
+        source repository/src/config
+        image=PiFireOS-${{ github.event.release.tag_name }}
+        cp repository/src/workspace/*.img ${image}.img
+        echo "image=${image}" >> $GITHUB_ENV
+
+    # artifact upload will take care of zipping for us
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.1.2
+    #  if: github.event_name == 'schedule'
+      with:
+        name: ${{ env.image }}
+        path: ${{ env.image }}.img
+        
+    - name: Upload Image to Release
+      uses: xresloader/upload-to-github-release@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        file: "${{ env.image }}.img"
+        verbose: true
+        update_latest_release: true
