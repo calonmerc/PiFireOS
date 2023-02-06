@@ -49,7 +49,7 @@ jobs:
       id: copy
       run: |
         source repository/src/config
-        image=PiFireOS-${{ github.ref }}
+        image=PiFireOS-${{ github.ref_name }}
         cp repository/src/workspace/*.img ${image}.img
         echo "image=${image}" >> $GITHUB_ENV
 
