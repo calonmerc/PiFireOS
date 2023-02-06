@@ -44,7 +44,7 @@ echo "i2c-dev" | tee -a /etc/modules > /dev/null
 
 # Download PiFire
 pushd /usr/local/bin
-    gitclone ${PIFIRE_REPO_URL} pifire
+    gitclone PIFIRE_REPO_URL pifire
 popd
 
 #Configure Nginx
