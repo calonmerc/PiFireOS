@@ -1,7 +1,6 @@
 name: Build Release Image
 
 on:
-  workflow_dispatch:
   release:
     types: [ published ]
 
@@ -63,12 +62,9 @@ jobs:
         name: ${{ env.image }}
         path: ${{ env.image }}.img
         
-    - name: Upload Image to Release
-      uses: xresloader/upload-to-github-release@main
+    - name: Upload to release
+      uses: JasonEtco/upload-to-release@master
+      with:
+        args: "${{ env.image }}.zip" application/zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        file: "${{ env.image }}.zip"
-        verbose: true
-        update_latest_release: true
-        release_id: ${{ github.ref }}
