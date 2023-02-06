@@ -43,9 +43,12 @@ echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
 echo "i2c-dev" | tee -a /etc/modules > /dev/null
 
 # Download PiFire
-pushd /usr/local/bin
-    gitclone PIFIRE_REPO pifire
-popd
+cd /usr/local/bin
+if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
+    git clone --depth 1 ${PIFIRE_REPO_URL}
+else
+    git clone --depth 1 --branch ${PIFIRE_REPO_BRANCH} ${PIFIRE_REPO_URL}
+fi
 
 #Configure Nginx
 rm /etc/nginx/sites-enabled/default

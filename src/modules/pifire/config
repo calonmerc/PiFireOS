@@ -11,9 +11,8 @@
 #### This File is distributed under MIT License
 ####
 
-[[ -n "$PIFIRE_REPO_SHIP" ]] || PIFIRE_REPO_SHIP="https://github.com/nebhead/PiFire.git"
+[[ -n "$PIFIRE_REPO_URL" ]] || PIFIRE_REPO_SHIP="https://github.com/nebhead/PiFire.git"
 [[ -n "$PIFIRE_REPO_BRANCH" ]] || PIFIRE_REPO_BRANCH="master"
-[[ -n "$PIFIRE_REPO_DEPTH" ]] || PIFIRE_REPO_BRANCH="1"
 
 [[ -n "$PIFIRE_NGINX_CONFIG_PATH" ]] || PIFIRE_NGINX_CONFIG_PATH="auto-install/nginx"
 [[ -n "$PIFIRE_SUPERVISORD_CONFIG_PATH" ]] || PIFIRE_SUPERVISORD_CONFIG_PATH="auto-install/supervisor"
