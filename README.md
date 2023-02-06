@@ -32,7 +32,7 @@ Download the latest stable build:
 
 Download the latest nightly builds (via Actions artifacts):
 
-[![Nightly version](https://img.shields.io/badge/version-nightly-brightgreen)](https://github.com/calonmerc/PiFireOS/actions)
+[![Nightly version](https://img.shields.io/badge/version-nightly-brightgreen)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
 
 ## How to use it?
 
@@ -48,12 +48,16 @@ Download the latest nightly builds (via Actions artifacts):
   * Change the configured timezone; run: `sudo dpkg-reconfigure tzdata`
   * Change the hostname; run: `echo myhostname | sudo tee /etc/hostname`
     * Your PiFireOS instance will then no longer be reachable under `pifireos.local` but rather the hostname you chose postfixed with `.local`, so keep that in mind.
+  * If WiFi is not available, a "PiFire-Hotspot" network will be started.
+    * Connect any compatible device and connect to `192.168.50.1` to control your smoker.
 
-:information_source: Supervisor is also configured by default. Access at: [http://pifireos.local:9001](http://pifireos.local:9001) with username "pifire" and password "PiFire".
+:information_source: Supervisor is configured by default. Access at: [http://pifireos.local:9001](http://pifireos.local:9001) with username "pifire" and password "PiFire".
 
 ## Features
 
 * [PiFire](https://nebhead.github.io/PiFire/) software for managing and controlling pellet smokers
+* [Supervisor](http://supervisord.org/) software for managing gui and control processes
+* [hostasp](https://w1.fi/hostapd/) software for managing automatic hotspot
 
 ## Developing
 
