@@ -40,9 +40,9 @@ jobs:
     
     - name: Build Image
       run: |
-        export PIFIRE_REPO_BRANCH="development"
         sudo modprobe loop
         cd repository/src
+        export PIFIRE_REPO_BRANCH="development"
         sudo bash -x ./build_dist
 
     - name: Copy output

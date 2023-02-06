@@ -49,7 +49,6 @@ pushd ${PIFIRE_INSTALL_PATH}
     else
         git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL pifire
     fi
-    ls
 popd
 
 #Configure Nginx
