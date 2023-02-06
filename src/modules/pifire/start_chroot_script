@@ -24,6 +24,23 @@ apt update
 
 apt upgrade -y
 
+apt install -y git nginx supervisor
+
+# Download PiFire
+pushd ${PIFIRE_INSTALL_PATH}
+    if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
+        git clone --depth 1 $PIFIRE_REPO_URL
+    else
+        git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL
+    fi
+    ls
+popd
+
+#Configure Nginx
+rm /etc/nginx/sites-enabled/default
+cp ${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
+ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
+
 apt install python3-dev python3-pip python3-pil libfreetype6-dev libjpeg-dev build-essential libopenjp2-7 libtiff5 nginx git gunicorn3 supervisor ttf-mscorefonts-installer redis-server -y
 apt install python3-rpi.gpio -y
 pip3 install flask
@@ -41,20 +58,6 @@ pip3 install apprise
 echo "dtparam=spi=on" | tee -a /boot/config.txt > /dev/null
 echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
 echo "i2c-dev" | tee -a /etc/modules > /dev/null
-
-# Download PiFire
-pushd ${PIFIRE_INSTALL_PATH}
-    if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
-        git clone --depth 1 $PIFIRE_REPO_URL
-    else
-        git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL
-    fi
-popd
-
-#Configure Nginx
-rm /etc/nginx/sites-enabled/default
-cp ${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
-ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
 
 #Configure Supervisor
 cp ${PIFIRE_SUPERVISORD_CONFIG_PATH}/*.conf /etc/supervisor/conf.d/
