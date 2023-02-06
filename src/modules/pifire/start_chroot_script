@@ -45,9 +45,9 @@ echo "i2c-dev" | tee -a /etc/modules > /dev/null
 # Download PiFire
 pushd ${PIFIRE_INSTALL_PATH}
     if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
-        git clone --depth 1 $PIFIRE_REPO_URL
+        git clone --depth 1 $PIFIRE_REPO_URL pifire
     else
-        git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL
+        git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL pifire
     fi
     ls
 popd
