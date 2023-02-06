@@ -20,6 +20,9 @@ source /common.sh
 # Set /tmp to RAM based storage in /etc/fstab 
 echo "tmpfs /tmp  tmpfs defaults,noatime 0 0" | sudo tee -a /etc/fstab > /dev/null
 
+#TEMPORARY FOR TESTING
+apt install -y git
+
 # Download PiFire
 pushd ${PIFIRE_INSTALL_PATH}
     if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
