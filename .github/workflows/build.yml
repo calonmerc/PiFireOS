@@ -2,6 +2,8 @@ name: Build Nightly Image
 
 on:
   push:
+    branches-ignore:
+      - master
   schedule: 
     - cron: '0 10 * * *'
 
