@@ -43,7 +43,7 @@ echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
 echo "i2c-dev" | tee -a /etc/modules > /dev/null
 
 # Download PiFire
-pushd /usr/local/bin
+pushd ${PIFIRE_INSTALL_PATH}
     if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
         git clone --depth 1 $PIFIRE_REPO_URL
     else
@@ -53,11 +53,11 @@ popd
 
 #Configure Nginx
 rm /etc/nginx/sites-enabled/default
-cp ${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
+cp ${PIFIRE_INSTALL_PATH}${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
 ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
 
 #Configure Supervisor
-cp ${PIFIRE_SUPERVISORD_CONFIG_PATH}/*.conf /etc/supervisor/conf.d/
+cp ${PIFIRE_INSTALL_PATH}${PIFIRE_SUPERVISORD_CONFIG_PATH}/*.conf /etc/supervisor/conf.d/
 
 if [[ ${PIFIRE_SUPERVISORD_ENABLE_UI} = "ENABLE_SVISOR" ]];then
    echo " " | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null

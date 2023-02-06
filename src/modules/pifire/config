@@ -14,6 +14,7 @@
 [[ -n "$PIFIRE_REPO_URL" ]] || PIFIRE_REPO_URL="https://github.com/nebhead/PiFire.git"
 [[ -n "$PIFIRE_REPO_BRANCH" ]] || PIFIRE_REPO_BRANCH="master"
 
+[[ -n "$PIFIRE_INSTALL_PATH" ]] || PIFIRE_INSTALL_PATH="/usr/local/bin/"
 [[ -n "$PIFIRE_NGINX_CONFIG_PATH" ]] || PIFIRE_NGINX_CONFIG_PATH="auto-install/nginx"
 [[ -n "$PIFIRE_SUPERVISORD_CONFIG_PATH" ]] || PIFIRE_SUPERVISORD_CONFIG_PATH="auto-install/supervisor"
 [[ -n "$PIFIRE_SUPERVISORD_ENABLE_UI" ]] || PIFIRE_SUPERVISORD_CONFIG_PATH="ENABLE_SVISOR"
