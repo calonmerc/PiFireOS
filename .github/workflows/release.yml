@@ -55,16 +55,15 @@ jobs:
     - name: Compress the image
       run: zip ${{ env.image }}.zip ${{ env.image }}.img
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3.1.2
-    #  if: github.event_name == 'schedule'
-      with:
-        name: ${{ env.image }}
-        path: ${{ env.image }}.img
+#    - name: Upload Artifact
+#      uses: actions/upload-artifact@v3.1.2
+#      with:
+#        name: ${{ env.image }}
+#        path: ${{ env.image }}.img
 
-    - name: Upload to release
+    - name: Upload to release - ${{ github.ref_name }}
       uses: JasonEtco/upload-to-release@master
       with:
-        args: "${{ env.image }}.zip"
+        args: "${{ env.image }}.zip" application/zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
