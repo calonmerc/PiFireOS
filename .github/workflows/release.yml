@@ -49,7 +49,7 @@ jobs:
       id: copy
       run: |
         source repository/src/config
-        image=PiFireOS-${{ github.event.release.tag_name }}
+        image=PiFireOS-${{ github.ref }}
         cp repository/src/workspace/*.img ${image}.img
         echo "image=${image}" >> $GITHUB_ENV
 
@@ -71,3 +71,4 @@ jobs:
         file: "${{ env.image }}.zip"
         verbose: true
         update_latest_release: true
+        release_tag_name: ${{ github.ref }}
