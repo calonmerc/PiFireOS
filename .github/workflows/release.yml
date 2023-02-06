@@ -62,8 +62,7 @@ jobs:
 #        path: ${{ env.image }}.img
 
     - name: Upload to release - ${{ github.ref_name }}
-      uses: JasonEtco/upload-to-release@master
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        args: ${{ env.image }}.zip application/zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        files: ${{ env.image }}.zip
