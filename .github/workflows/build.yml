@@ -1,4 +1,4 @@
-name: Build Image
+name: Build Nightly Image
 
 on:
   repository_dispatch:
