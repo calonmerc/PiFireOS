@@ -38,9 +38,9 @@ pip3 install influxdb-client[ciso]
 pip3 install apprise
 
 # Configure config.txt to enable SPI and i2c
-echo "dtparam=spi=on" | $SUDO tee -a /boot/config.txt > /dev/null
-echo "dtparam=i2c_arm=on" | $SUDO tee -a /boot/config.txt > /dev/null
-echo "i2c-dev" | $SUDO tee -a /etc/modules > /dev/null
+echo "dtparam=spi=on" | tee -a /boot/config.txt > /dev/null
+echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
+echo "i2c-dev" | tee -a /etc/modules > /dev/null
 
 # Download PiFire
 pushd /usr/local/bin

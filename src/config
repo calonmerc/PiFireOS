@@ -1,6 +1,6 @@
 export DIST_NAME=PiFireOS
 export DIST_VERSION=0.1.0
-export MODULES="base(auto-hotspot, network, password-for-sudo, usage-statistics)"
+export MODULES="base(auto-hotspot, network, password-for-sudo, disable-services(pifire), usage-statistics)"
 BASE_OVERRIDE_HOSTNAME=PiFireOS
 AUTO_HOTSPOT_NAME=PiFire-Hotspot
 
