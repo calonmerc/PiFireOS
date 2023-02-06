@@ -20,24 +20,6 @@ source /common.sh
 # Set /tmp to RAM based storage in /etc/fstab 
 echo "tmpfs /tmp  tmpfs defaults,noatime 0 0" | sudo tee -a /etc/fstab > /dev/null
 
-#TEMPORARY FOR TESTING
-apt install -y git
-
-# Download PiFire
-pushd ${PIFIRE_INSTALL_PATH}
-    if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
-        git clone --depth 1 $PIFIRE_REPO_URL
-    else
-        git clone --depth 1 --branch $PIFIRE_REPO_BRANCH $PIFIRE_REPO_URL
-    fi
-popd
-
-#Configure Nginx
-rm /etc/nginx/sites-enabled/default
-cp ${PIFIRE_NGINX_CONFIG_PATH}/pifire.nginx /etc/nginx/sites-available/pifire
-ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
-
-
 apt update
 
 apt upgrade -y
