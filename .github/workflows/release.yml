@@ -71,4 +71,4 @@ jobs:
         file: "${{ env.image }}.zip"
         verbose: true
         update_latest_release: true
-        release_tag_name: ${{ github.ref }}
+        release_id: ${{ github.ref }}
