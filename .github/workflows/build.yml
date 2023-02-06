@@ -41,6 +41,7 @@ jobs:
     
     - name: Build Image
       run: |
+        PIFIRE_REPO_BRANCH=development
         sudo modprobe loop
         cd repository/src
         sudo bash -x ./build_dist
@@ -55,7 +56,8 @@ jobs:
         echo "image=${image}" >> $GITHUB_ENV
 
     # artifact upload will take care of zipping for us
-    - uses: actions/upload-artifact@v3.1.2
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.1.2
     #  if: github.event_name == 'schedule'
       with:
         name: ${{ env.image }}
