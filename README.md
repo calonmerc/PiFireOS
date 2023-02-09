@@ -12,6 +12,7 @@ PiFireOS
    * [How to use it?](#how-to-use-it)
    * [Features](#features)
    * [Developing](#developing)
+   * [Get help](#get-help)
 <!--te-->
 
 ***
@@ -62,3 +63,13 @@ Download the latest nightly builds (via Actions artifacts):
 ## Developing
 
 Code contribution would be appreciated!
+
+## Get Help
+
+### Discord
+
+The [PiFire Discord server] (https://discord.gg/JmzbCUcefS) has an #os-images channel. This is likely the best place for support for this image.
+
+### Issue Tracker
+
+PLEASE limit this to issues with the image, not to issues with PiFire itself.
