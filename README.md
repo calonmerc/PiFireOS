@@ -68,7 +68,7 @@ Code contribution would be appreciated!
 
 ### Discord
 
-The [PiFire Discord server] (https://discord.gg/JmzbCUcefS) has an #os-images channel. This is likely the best place for support for this image.
+The [PiFire Discord server](https://discord.gg/JmzbCUcefS) has an #os-images channel. This is likely the best place for support for this image.
 
 ### Issue Tracker
 
