@@ -42,7 +42,7 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        export PIFIRE_REPO_BRANCH=development
+        echo PIFIRE_REPO_BRANCH=development >> /PiFireOS/src/config.local
         sudo bash -x ./build_dist
 
     - name: Copy output
