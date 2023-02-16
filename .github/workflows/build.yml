@@ -42,7 +42,8 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        sudo bash -x ./build_dist development
+        export PIFIRE_REPO_BRANCH=development
+        sudo bash -x ./build_dist
 
     - name: Copy output
       id: copy

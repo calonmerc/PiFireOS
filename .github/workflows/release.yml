@@ -41,7 +41,7 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        sudo bash -x ./build_dist master
+        sudo bash -x ./build_dist
 
     - name: Copy Output
       id: copy
