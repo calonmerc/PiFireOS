@@ -41,8 +41,7 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        export PIFIRE_REPO_BRANCH="master"
-        sudo bash -x ./build_dist
+        sudo bash -x ./build_dist master
 
     - name: Copy Output
       id: copy
