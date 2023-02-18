@@ -1,13 +1,14 @@
 PiFireOS
 ==========
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/calonmerc/PiFireOS)
+[![Version](https://img.shields.io/github/v/release/calonmerc/PiFireOS.svg?color=brightgreen&label=version)](https://github.com/calonmerc/PiFireOS/releases/latest)
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/calonmerc/PiFireOS/releases&query=$[0].published_at)](https://github.com/calonmerc/PiFireOS/releases/latest)
 ![GitHub Releases (all releases)](https://img.shields.io/github/downloads/calonmerc/PiFireOS/total.svg)
-![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/build.yml)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
+[![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/build.yml)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
 
 ### PiFire Stats
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/nebhead/pifire/development)](https://github.com/nebhead/PiFire/commits/development)
+[![Version](https://img.shields.io/github/v/release/nebhead/PiFire.svg?color=brightgreen&label=version)](https://github.com/nebhead/PiFire/releases/latest)
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/nebhead/PiFire/releases&query=$[0].published_at)](https://github.com/nebhead/PiFire/releases/latest)
 
 <!--ts-->
