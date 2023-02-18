@@ -7,7 +7,7 @@ PiFireOS
 ![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/build.yml)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
 
 ### PiFire Stats
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/nebhead/pifire/development)
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/nebhead/pifire/development)](https://github.com/nebhead/PiFire/commits/development)
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/nebhead/PiFire/releases&query=$[0].published_at)](https://github.com/nebhead/PiFire/releases/latest)
 
 <!--ts-->
