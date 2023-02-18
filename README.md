@@ -32,11 +32,11 @@ This repository contains the source script to generate the distribution out of a
 
 ## Where to get it?
 
-Download the latest stable build:
+Download the latest stable build (typically running latest stable [PiFire](https://github.com/nebhead/PiFire/releases):
 
 [![Stable version](https://img.shields.io/github/v/release/calonmerc/PiFireOS.svg?color=brightgreen&label=version)](https://github.com/calonmerc/PiFireOS/releases/latest)
 
-Download the latest nightly builds (via Actions artifacts):
+Download the latest nightly builds (latest image always runs newest code from [PiFire development branch](https://github.com/nebhead/PiFire/commits/development):
 
 [![Nightly version](https://img.shields.io/badge/version-nightly-brightgreen)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
 
