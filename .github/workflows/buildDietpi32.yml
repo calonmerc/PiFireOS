@@ -43,6 +43,7 @@ jobs:
         sudo modprobe loop
         cd repository/src
         echo PIFIRE_REPO_BRANCH=development >> config.local
+        echo BASE_ZIP_IMG=DietPi_RPi-ARMv6-Bullseye.7z >> config.local
         sudo bash -x ./build_dist
 
     - name: Copy output
