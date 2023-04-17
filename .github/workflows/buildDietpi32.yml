@@ -43,6 +43,7 @@ jobs:
         sudo modprobe loop
         cd repository/src
         echo PIFIRE_REPO_BRANCH=development >> config.local
+        echo BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/DietPi*.7z | head -n 1` >> config.local
         echo BASE_DISTRO=DietPi >> config.local
         echo BASE_IMAGE_RASPBIAN=no >> config.local
         sudo bash -x ./build_dist
@@ -100,7 +101,7 @@ jobs:
         sudo modprobe loop
         cd repository/src
         echo PIFIRE_REPO_BRANCH=development >> config.local
-        echo BASE_ZIP_IMG=`ls -t image/DietPi*.7z | head -n 1` >> config.local
+        echo BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/DietPi*.7z | head -n 1` >> config.local
         echo BASE_ARCH=aarch64 >> config.local
         echo BASE_DISTRO=DietPi >> config.local
         echo BASE_IMAGE_RASPBIAN=no >> config.local
