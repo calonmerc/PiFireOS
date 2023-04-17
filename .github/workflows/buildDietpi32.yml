@@ -1,4 +1,4 @@
-name: Build Nightly Image
+name: Build Nightly Image - DietPi 32 bit
 
 on:
   push:
@@ -28,10 +28,10 @@ jobs:
         path: repository
         submodules: true
 
-    - name: Download Raspbian Image
+    - name: Download Dietpi Image
       run: |
         cd repository/src/image
-        wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
+        wget -c --trust-server-names 'https://dietpi.com/downloads/images/DietPi_RPi-ARMv6-Bullseye.7z'
 
     - name: Update CustomPiOS Paths
       run: |
