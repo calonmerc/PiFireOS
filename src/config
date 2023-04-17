@@ -7,3 +7,7 @@ AUTO_HOTSPOT_NAME=PiFire-Hotspot
 export RPI_IMAGER_NAME="${DIST_NAME} version ${DIST_VERSION}"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/nebhead/PiFire/main/static/img/launcher-icon-2x.png"
 export RPI_IMAGER_DESCRIPTION="Raspberry Pi OS that starts a hotspot, if no wifi was found to conenct to"
+
+BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/DietPi_*.{zip,7z,xz} | head -n 1`
+BASE_DISTRO=DietPi
+BASE_IMAGE_RASPBIAN=no
