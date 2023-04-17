@@ -43,7 +43,7 @@ jobs:
         sudo modprobe loop
         cd repository/src
         echo PIFIRE_REPO_BRANCH=development >> config.local
-        echo BASE_ZIP_IMG=image/DietPi_RPi-ARMv8-Bullseye.7z >> config.local
+        echo BASE_ZIP_IMG=`ls -t image/DietPi*.{zip,7z} | head -n 1` >> config.local
         sudo bash -x ./build_dist
 
     - name: Copy output
