@@ -6,7 +6,7 @@ AUTO_HOTSPOT_NAME=PiFire-Hotspot
 
 export RPI_IMAGER_NAME="${DIST_NAME} version ${DIST_VERSION}"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/nebhead/PiFire/main/static/img/launcher-icon-2x.png"
-export RPI_IMAGER_DESCRIPTION="Raspberry Pi OS that starts a hotspot, if no wifi was found to conenct to"
+export RPI_IMAGER_DESCRIPTION="Distro for pellet grill/smoker control, running PiFire."
 
 BASE_IMAGE_PATH=${DIST_PATH}/image
 BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/DietPi_*.7z | head -n 1`
