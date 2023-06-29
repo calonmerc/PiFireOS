@@ -4,8 +4,7 @@ PiFireOS
 [![Version](https://img.shields.io/github/v/release/calonmerc/PiFireOS.svg?color=brightgreen&label=version)](https://github.com/calonmerc/PiFireOS/releases/latest)
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/calonmerc/PiFireOS/releases&query=$[0].published_at)](https://github.com/calonmerc/PiFireOS/releases/latest)
 ![GitHub Releases (all releases)](https://img.shields.io/github/downloads/calonmerc/PiFireOS/total.svg)
-[![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/buildRaspios.yml)](https://github.com/calonmerc/PiFireOS/actions/workflows/buildRaspios.yml)
-[![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/buildDietpi.yml)](https://github.com/calonmerc/PiFireOS/actions/workflows/buildDietpi.yml)
+[![Build status](https://img.shields.io/github/actions/workflow/status/calonmerc/PiFireOS/buildRaspios.yml?label=nightly)](https://github.com/calonmerc/PiFireOS/actions/workflows/buildRaspios.yml)
 
 ### PiFire Stats
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/nebhead/pifire/development)](https://github.com/nebhead/PiFire/commits/development)
@@ -25,7 +24,6 @@ PiFireOS
 :information_source: You can find the PiFire documentation [here](https://nebhead.github.io/PiFire/)
 ***
 
-***
 
 A [Raspberry Pi](http://www.raspberrypi.org/) distribution for Pi based pellet smoker controllers. It includes the [PiFire](https://nebhead.github.io/PiFire/) software for managing and monitoring multiple Octoprint instances out of the box.
 
@@ -33,13 +31,13 @@ This repository contains the source script to generate the distribution out of a
 
 ## Where to get it?
 
-Download the latest stable build (typically running latest stable [PiFire](https://github.com/nebhead/PiFire/releases):
+Download the latest stable build (typically running latest stable [PiFire](https://github.com/nebhead/PiFire/releases)):
 
 [![Stable version](https://img.shields.io/github/v/release/calonmerc/PiFireOS.svg?color=brightgreen&label=version)](https://github.com/calonmerc/PiFireOS/releases/latest)
 
-Download the latest nightly builds (latest image always runs newest code from [PiFire development branch](https://github.com/nebhead/PiFire/commits/development):
+Download the latest nightly builds (latest image always runs newest code from [PiFire development branch](https://github.com/nebhead/PiFire/commits/development)):
 
-[![Nightly version](https://img.shields.io/badge/version-nightly-brightgreen)](https://github.com/calonmerc/PiFireOS/actions/workflows/build.yml)
+[![Nightly version](https://img.shields.io/badge/version-nightly-brightgreen)](https://github.com/calonmerc/PiFireOS/actions/workflows/buildRaspios.yml)
 
 ## How to use it?
 
