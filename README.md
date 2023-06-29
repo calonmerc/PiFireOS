@@ -44,7 +44,8 @@ Download the latest nightly builds (latest image always runs newest code from [P
 * Flash the image to an sd card using [Balena Etcher](https://www.balena.io/etcher) or [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 * Configure your WiFi by editing `pifireos-wpa-supplicant.txt` on the root of the SD card. **You may need to eject and reinsert the card.**
 * Boot the Pi from the card
-* Connect via web browser to [http://pifireos.local](http://pifireos.local).
+* Connect via web browser to [http://pifireos.local](http://pifireos.local) (if your computer supports bonjour) or [http://pifireos](http://pifireos) (if your network properly has internal dns).
+  * Alternatively you may need to use a tool like [Angry IP Scanner](https://angryip.org/) or [Advanced IP Scanner](https://www.advanced-ip-scanner.com/) to find the IP address.
 * Configure your smoker settings.
 * OPTIONALLY:
   * Log into your Pi via SSH (it is located at `pifireos.local` [if your computer supports bonjour](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview) or find the IP address assigned by your router), default username is "pi", default password is "raspberry".
