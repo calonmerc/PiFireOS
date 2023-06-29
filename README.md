@@ -45,7 +45,6 @@ Download the latest nightly builds (latest image always runs newest code from [P
 * Configure your WiFi by editing `pifireos-wpa-supplicant.txt` on the root of the SD card. **You may need to eject and reinsert the card.**
 * Boot the Pi from the card
 * Connect via web browser to [http://pifireos.local](http://pifireos.local).
-    * Since the SSL certificate is self signed (and generated upon first boot), you will get a certificate warning at the latter location, please ignore it.
 * Configure your smoker settings.
 * OPTIONALLY:
   * Log into your Pi via SSH (it is located at `pifireos.local` [if your computer supports bonjour](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview) or find the IP address assigned by your router), default username is "pi", default password is "raspberry".
