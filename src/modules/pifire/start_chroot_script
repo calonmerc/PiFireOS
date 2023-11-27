@@ -43,12 +43,11 @@ pushd ${PIFIRE_INSTALL_PATH}
     # Change ability for pifire group to read/write/execute 
     chmod -R 775 pifire
     #set up Python VENV
+    df -h
     python -m venv --system-site-packages pifire
     df -h
     pushd pifire
-        df -h
         source bin/activate 
-        df -h
         # Install module dependencies 
         python -m pip install "flask==2.3.3" 
         python -m pip install flask-mobility
