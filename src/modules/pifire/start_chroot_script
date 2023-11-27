@@ -43,27 +43,25 @@ pushd ${PIFIRE_INSTALL_PATH}
     # Change ability for pifire group to read/write/execute 
     chmod -R 775 pifire
     #set up Python VENV
-    df -h
     python -m venv --system-site-packages pifire
-    df -h
     pushd pifire
         source bin/activate 
         # Install module dependencies 
-        python -m pip install "flask==2.3.3" 
-        python -m pip install flask-mobility
-        python -m pip install flask-qrcode
-        python -m pip install flask-socketio
-        python -m pip install eventlet
-        python -m pip install gunicorn
-        python -m pip install gpiozero
-        python -m pip install redis
-        python -m pip install uuid
-        python -m pip install influxdb-client[ciso]
-        python -m pip install apprise
-        python -m pip install scikit-fuzzy
-        python -m pip install scikit-learn
-        python -m pip install ratelimitingfilter
-        python -m pip install "pillow>=9.2.0"
+        python -m pip install "flask==2.3.3" --cache-dir=/var/cache/apt
+        python -m pip install flask-mobility --cache-dir=/var/cache/apt
+        python -m pip install flask-qrcode --cache-dir=/var/cache/apt
+        python -m pip install flask-socketio --cache-dir=/var/cache/apt
+        python -m pip install eventlet --cache-dir=/var/cache/apt
+        python -m pip install gunicorn --cache-dir=/var/cache/apt
+        python -m pip install gpiozero --cache-dir=/var/cache/apt
+        python -m pip install redis --cache-dir=/var/cache/apt
+        python -m pip install uuid --cache-dir=/var/cache/apt
+        python -m pip install influxdb-client[ciso] --cache-dir=/var/cache/apt
+        python -m pip install apprise --cache-dir=/var/cache/apt
+        python -m pip install scikit-fuzzy --cache-dir=/var/cache/apt
+        python -m pip install scikit-learn --cache-dir=/var/cache/apt
+        python -m pip install ratelimitingfilter --cache-dir=/var/cache/apt
+        python -m pip install "pillow>=9.2.0" --cache-dir=/var/cache/apt
     popd
     
     #configure  auto-install scripts
