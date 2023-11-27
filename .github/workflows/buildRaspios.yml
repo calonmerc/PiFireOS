@@ -41,7 +41,7 @@ jobs:
     
     - name: Build Image
       run: |
-        apt clean
+        sudo apt clean
         sudo modprobe loop
         cd repository/src
         echo PIFIRE_REPO_BRANCH=development >> config.local
