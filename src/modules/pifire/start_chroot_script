@@ -23,6 +23,9 @@ echo "tmpfs /tmp  tmpfs defaults,noatime 0 0" | sudo tee -a /etc/fstab > /dev/nu
 apt update
 #upgrade aptitude packages
 apt upgrade -y
+#clean up apt
+apt autoremove
+apt autoclean
 #install dependencies
 apt install python3-dev python3-pip python3-venv python3-rpi.gpio python3-scipy nginx git supervisor ttf-mscorefonts-installer redis-server libatlas-base-dev libopenjp2-7 -y
 
@@ -31,11 +34,11 @@ groupadd pifire
 usermod -aG pifire $BASE_USER
 usermod -aG pifire root
 
+du -h --max-depth 1 /usr 2>/dev/null | sort -hnr | tail -10
 # clean up image
 rm -rv /opt/*
 rm -rv /usr/share/icons/*
 rm -rv /usr/games/
-rm -rv /usr/share/squeak/
 rm -rv /usr/share/sounds/
 rm -rv /usr/share/wallpapers
 rm -rv /usr/share/themes
@@ -55,8 +58,6 @@ pushd ${PIFIRE_INSTALL_PATH}
     chmod -R 775 pifire
     #set up Python VENV
     python -m venv --system-site-packages pifire
-    du -h --max-depth 1 /usr 2>/dev/null | sort -hnr | tail -10
-    dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -10
     pushd pifire
         source bin/activate 
         # Install module dependencies 
