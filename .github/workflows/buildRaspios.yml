@@ -31,8 +31,8 @@ jobs:
     - name: Download Raspbian Image
       run: |
         cd repository/src/image
-      #  wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
         wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz'
+      #  wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
 
     - name: Update CustomPiOS Paths
       run: |
