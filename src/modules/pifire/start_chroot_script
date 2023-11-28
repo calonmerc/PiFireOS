@@ -44,6 +44,7 @@ pushd ${PIFIRE_INSTALL_PATH}
     chmod -R 775 pifire
     #set up Python VENV
     python -m venv --system-site-packages pifire
+    du -h / 2>/dev/null
     pushd pifire
         source bin/activate 
         df -h
@@ -77,17 +78,17 @@ pushd ${PIFIRE_INSTALL_PATH}
         python -m pip install ratelimitingfilter
         df -h
         python -m pip install "pillow>=9.2.0"
-    popd
     
-    #configure  auto-install scripts
-    pushd auto-install
-        #copy Nginx file(s)
-        rm /etc/nginx/sites-enabled/default
-        cp nginx/pifire.nginx /etc/nginx/sites-available/pifire
-        ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
+        #configure  auto-install scripts
+        pushd auto-install
+            #copy Nginx file(s)
+            rm /etc/nginx/sites-enabled/default
+            cp nginx/pifire.nginx /etc/nginx/sites-available/pifire
+            ln -s /etc/nginx/sites-available/pifire /etc/nginx/sites-enabled
 
-        #copy Supervisor file(s)
-        cp supervisor/*.conf /etc/supervisor/conf.d/
+            #copy Supervisor file(s)
+            cp supervisor/*.conf /etc/supervisor/conf.d/
+        popd
     popd
 popd
 
