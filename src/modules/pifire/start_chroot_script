@@ -46,22 +46,38 @@ pushd ${PIFIRE_INSTALL_PATH}
     python -m venv --system-site-packages pifire
     pushd pifire
         source bin/activate 
+        df -h
+        df -h
         # Install module dependencies 
-        python -m pip install "flask==2.3.3" --cache-dir=/var/cache/apt
-        python -m pip install flask-mobility --cache-dir=/var/cache/apt
-        python -m pip install flask-qrcode --cache-dir=/var/cache/apt
-        python -m pip install flask-socketio --cache-dir=/var/cache/apt
-        python -m pip install eventlet --cache-dir=/var/cache/apt
-        python -m pip install gunicorn --cache-dir=/var/cache/apt
-        python -m pip install gpiozero --cache-dir=/var/cache/apt
-        python -m pip install redis --cache-dir=/var/cache/apt
-        python -m pip install uuid --cache-dir=/var/cache/apt
-        python -m pip install influxdb-client[ciso] --cache-dir=/var/cache/apt
-        python -m pip install apprise --cache-dir=/var/cache/apt
-        python -m pip install scikit-fuzzy --cache-dir=/var/cache/apt
-        python -m pip install scikit-learn --cache-dir=/var/cache/apt
-        python -m pip install ratelimitingfilter --cache-dir=/var/cache/apt
-        python -m pip install "pillow>=9.2.0" --cache-dir=/var/cache/apt
+        python -m pip install "flask==2.3.3" 
+        df -h
+        python -m pip install flask-mobility
+        df -h
+        python -m pip install flask-qrcode
+        df -h
+        python -m pip install flask-socketio
+        df -h
+        python -m pip install eventlet
+        df -h
+        python -m pip install gunicorn
+        df -h
+        python -m pip install gpiozero
+        df -h
+        python -m pip install redis
+        df -h
+        python -m pip install uuid
+        df -h
+        python -m pip install influxdb-client[ciso]
+        df -h
+        python -m pip install apprise
+        df -h
+        python -m pip install scikit-fuzzy
+        df -h
+        python -m pip install scikit-learn
+        df -h
+        python -m pip install ratelimitingfilter
+        df -h
+        python -m pip install "pillow>=9.2.0"
     popd
     
     #configure  auto-install scripts
