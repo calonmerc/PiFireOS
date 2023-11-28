@@ -33,6 +33,9 @@ jobs:
         cd repository/src/image
         wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
       # wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz'
+                    
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@v1.3.1
 
     - name: Update CustomPiOS Paths
       run: |

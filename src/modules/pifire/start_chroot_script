@@ -47,7 +47,6 @@ pushd ${PIFIRE_INSTALL_PATH}
     pushd pifire
         source bin/activate 
         df -h
-        df -h
         # Install module dependencies 
         python -m pip install "flask==2.3.3" 
         df -h
