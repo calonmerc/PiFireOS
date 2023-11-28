@@ -31,6 +31,17 @@ groupadd pifire
 usermod -aG pifire $BASE_USER
 usermod -aG pifire root
 
+# clean up image
+rm -rv /opt/*
+rm -rv /usr/share/icons/*
+rm -rv /usr/games/
+rm -rv /usr/share/squeak/
+rm -rv /usr/share/sounds/
+rm -rv /usr/share/wallpapers
+rm -rv /usr/share/themes
+rm -rv /usr/share/kde4
+rm -rv /usr/share/images/*
+
 # Download PiFire
 pushd ${PIFIRE_INSTALL_PATH}
     if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
@@ -44,7 +55,7 @@ pushd ${PIFIRE_INSTALL_PATH}
     chmod -R 775 pifire
     #set up Python VENV
     python -m venv --system-site-packages pifire
-    du -h --max-depth 1 /usr 2>/dev/null | sort -nr | tail -10
+    du -h --max-depth 1 /usr 2>/dev/null | sort -hnr | tail -10
     dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -10
     pushd pifire
         source bin/activate 
