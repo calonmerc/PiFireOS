@@ -45,7 +45,7 @@ pushd ${PIFIRE_INSTALL_PATH}
     #set up Python VENV
     python -m venv --system-site-packages pifire
     du -h --max-depth 1 / 2>/dev/null | grep '[0-9\.]\+G' | sort -nr
-    aptitude search "~i" --display-format "%p %I" --sort installsize | tail -10
+    apt search "~i" --display-format "%p %I" --sort installsize | tail -10
     pushd pifire
         source bin/activate 
         df -h
