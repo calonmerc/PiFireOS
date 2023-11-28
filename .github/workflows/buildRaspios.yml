@@ -17,13 +17,13 @@ jobs:
         sudo apt install coreutils p7zip-full qemu-user-static
 
     - name: Checkout CustomPiOS
-      uses: actions/checkout@v3.3.0
+      uses: actions/checkout@v4
       with:
         repository: 'guysoft/CustomPiOS'
         path: CustomPiOS
 
     - name: Checkout Project Repository
-      uses: actions/checkout@v3.3.0
+      uses: actions/checkout@v4
       with:
         path: repository
         submodules: true
@@ -58,7 +58,7 @@ jobs:
 
     # artifact upload will take care of zipping for us
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3.1.2
+      uses: actions/upload-artifact@v3
       # if: github.event_name == 'schedule'
       with:
         name: ${{ env.image }}
