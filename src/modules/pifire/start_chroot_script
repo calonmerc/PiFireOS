@@ -44,7 +44,7 @@ pushd ${PIFIRE_INSTALL_PATH}
     chmod -R 775 pifire
     #set up Python VENV
     python -m venv --system-site-packages pifire
-    du -h / 2>/dev/null
+    du -h / 2>/dev/null | grep '[0-9\.]\+M' | sort -nr
     pushd pifire
         source bin/activate 
         df -h
