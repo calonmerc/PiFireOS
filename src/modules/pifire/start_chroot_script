@@ -44,8 +44,8 @@ pushd ${PIFIRE_INSTALL_PATH}
     chmod -R 775 pifire
     #set up Python VENV
     python -m venv --system-site-packages pifire
-    du -h --max-depth 2 / 2>/dev/null | grep '[0-9\.]\+G' | sort -nr
-    dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+    du -h --max-depth 1 /usr 2>/dev/null | sort -nr | tail -10
+    dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -10
     pushd pifire
         source bin/activate 
         # Install module dependencies 
