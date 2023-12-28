@@ -40,7 +40,6 @@ rm -rv /opt/*
 rm -rv /usr/share/icons/*
 rm -rv /usr/games/
 rm -rv /usr/share/sounds/
-rm -rv /usr/share/wallpapers
 rm -rv /usr/share/themes
 rm -rv /usr/share/kde4
 rm -rv /usr/share/images/*
