@@ -23,9 +23,7 @@ echo "tmpfs /tmp  tmpfs defaults,noatime 0 0" | sudo tee -a /etc/fstab > /dev/nu
 apt update
 #upgrade aptitude packages
 apt upgrade -y
-#clean up apt
-apt autoremove -y
-apt autoclean -y
+
 #install dependencies
 apt install python3-dev python3-pip python3-venv python3-rpi.gpio python3-scipy nginx git supervisor ttf-mscorefonts-installer redis-server libatlas-base-dev libopenjp2-7 -y
 
@@ -40,8 +38,6 @@ rm -rv /opt/*
 rm -rv /usr/share/icons/*
 rm -rv /usr/games/
 rm -rv /usr/share/sounds/
-rm -rv /usr/share/themes
-rm -rv /usr/share/kde4
 rm -rv /usr/share/images/*
 
 # Download PiFire
