@@ -39,6 +39,8 @@ rm -rv /usr/share/icons/*
 rm -rv /usr/games/
 rm -rv /usr/share/sounds/
 
+du -h --max-depth 1 /usr 2>/dev/null | sort -h -r | tail -10
+
 # Download PiFire
 pushd ${PIFIRE_INSTALL_PATH}
     if [ "${PIFIRE_REPO_BRANCH}" == "master" ]; then
