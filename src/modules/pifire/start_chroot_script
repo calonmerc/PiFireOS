@@ -32,13 +32,12 @@ groupadd pifire
 usermod -aG pifire $BASE_USER
 usermod -aG pifire root
 
-du -h --max-depth 1 /usr 2>/dev/null | sort -r | tail -10
+du --max-depth 1 /usr 2>/dev/null | sort -r | tail -10
 # clean up image
 rm -rv /opt/*
 rm -rv /usr/share/icons/*
 rm -rv /usr/games/
 rm -rv /usr/share/sounds/
-rm -rv /usr/share/images/*
 
 # Download PiFire
 pushd ${PIFIRE_INSTALL_PATH}

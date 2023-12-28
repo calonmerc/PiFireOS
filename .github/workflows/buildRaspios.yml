@@ -12,6 +12,7 @@ jobs:
     - name: Update Dependencies
       run: |
         sudo apt update
+
     - name: Install Dependencies
       run: |
         sudo apt install coreutils p7zip-full qemu-user-static -y
