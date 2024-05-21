@@ -72,6 +72,8 @@ pushd ${PIFIRE_INSTALL_PATH}
         python -m pip install scikit-learn
         python -m pip install ratelimitingfilter
         python -m pip install "pillow>=9.2.0"
+        python -m pip install paho-mqtt
+        python -m pip install psutil
     
         #configure  auto-install scripts
         pushd auto-install
@@ -95,7 +97,17 @@ if [[ ${PIFIRE_SUPERVISORD_ENABLE_UI} = "ENABLE_SVISOR" ]];then
    echo "password = " ${PIFIRE_SUPERVISORD_DEFAULT_PASS} | sudo tee -a /etc/supervisor/supervisord.conf > /dev/null
 fi
 
-# Configure config.txt to enable SPI and i2c
-echo "dtparam=spi=on" | tee -a /boot/config.txt > /dev/null
-echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
-echo "i2c-dev" | tee -a /etc/modules > /dev/null
+# Configure SPI, i2c, and misc for screens
+
+# echo "dtparam=spi=on" | tee -a /boot/config.txt > /dev/null
+raspi-config nonint do_spi 0
+# echo "dtparam=i2c_arm=on" | tee -a /boot/config.txt > /dev/null
+# echo "i2c-dev" | tee -a /etc/modules > /dev/null
+raspi-config nonint do_i2c 0
+# Enable Hardware PWM - Needed for hardware PWM support 
+if test -f /boot/firmware/config.txt; then
+  echo "dtoverlay=pwm,gpiopin=13,func=4" | tee -a /boot/firmware/config.txt > /dev/null
+else
+  echo "dtoverlay=pwm,gpiopin=13,func=4" | tee -a /boot/config.txt > /dev/null
+fi
+echo 'SUBSYSTEM=="backlight",RUN+="/bin/chmod 666 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"' | tee -a /etc/udev/rules.d/backlight-permissions.rules > /dev/null
