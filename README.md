@@ -54,6 +54,7 @@ Download the latest nightly builds (latest image always runs newest code from [P
   * Change the hostname; run: `echo myhostname | sudo tee /etc/hostname`
     * Your PiFireOS instance will then no longer be reachable under `pifireos.local` but rather the hostname you chose postfixed with `.local`, so keep that in mind.
   * If WiFi is not available, a "PiFire-Hotspot" network will be started.
+    * Default password is "raspberry"
     * Connect any compatible device and connect to `192.168.50.1` to control your smoker.
 
 :information_source: Supervisor is configured by default. Access at: [http://pifireos.local:9001](http://pifireos.local:9001) with username "pifire" and password "PiFire".
