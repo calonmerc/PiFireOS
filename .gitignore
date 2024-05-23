@@ -1,3 +1,6 @@
 src/config.local
+src/image/*.xz
 src/image/*.zip
 **/key.json
+src/build.log
+workspace/

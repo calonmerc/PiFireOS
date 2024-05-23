@@ -10,10 +10,9 @@
 ####
 #### This File is distributed under MIT License
 ####
-
 [[ -n "$PIFIRE_REPO_URL" ]] || PIFIRE_REPO_URL="https://github.com/nebhead/PiFire.git"
 [[ -n "$PIFIRE_REPO_BRANCH" ]] || PIFIRE_REPO_BRANCH="master"
-
+#set defaults, may be used to change defaults at runtime
 [[ -n "$PIFIRE_INSTALL_PATH" ]] || PIFIRE_INSTALL_PATH="/usr/local/bin"
 [[ -n "$PIFIRE_SUPERVISORD_ENABLE_UI" ]] || PIFIRE_SUPERVISORD_ENABLE_UI="ENABLE_SVISOR"
 [[ -n "$PIFIRE_SUPERVISORD_DEFAULT_USER" ]] || PIFIRE_SUPERVISORD_DEFAULT_USER="pifire"

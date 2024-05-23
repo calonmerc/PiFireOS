@@ -1,15 +1,17 @@
+# setup distro values
 export DIST_NAME=PiFireOS
-export DIST_VERSION=0.2.0
-
+export DIST_VERSION=0.3.0
+#set base user params
 export BASE_USER=pi
 export BASE_USER_PASSWORD=raspberry
-
+#basic RPI Imager values
 export RPI_IMAGER_NAME="${DIST_NAME} version ${DIST_VERSION}"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/nebhead/PiFire/main/static/img/launcher-icon-2x.png"
 export RPI_IMAGER_WEBSITE="https://github.com/calonmerc/PiFireOS"
 export RPI_IMAGER_DESCRIPTION="Distro for pellet grill/smoker control, running PiFire."
-
 #export MODULES="base(auto-hotspot, network, password-for-sudo, disable-services(pifire), usage-statistics)"
 export MODULES="base(network, password-for-sudo, disable-services(pifire), usage-statistics)"
-BASE_OVERRIDE_HOSTNAME=PiFireOS
-AUTO_HOTSPOT_NAME=PiFire-Hotspot
+export BASE_OVERRIDE_HOSTNAME=PiFireOS
+export AUTO_HOTSPOT_NAME=PiFire-Hotspot
+#increase base image size
+export BASE_IMAGE_ENLARGEROOT=400
