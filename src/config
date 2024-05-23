@@ -14,4 +14,4 @@ export MODULES="base(network, password-for-sudo, disable-services(pifire), usage
 export BASE_OVERRIDE_HOSTNAME=PiFireOS
 export AUTO_HOTSPOT_NAME=PiFire-Hotspot
 #increase base image size
-export BASE_IMAGE_ENLARGEROOT=400
+export BASE_IMAGE_ENLARGEROOT=600
