@@ -59,7 +59,7 @@ jobs:
 
     # artifact upload will take care of zipping for us
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       # if: github.event_name == 'schedule'
       with:
         name: ${{ env.image }}
