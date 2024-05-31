@@ -68,6 +68,7 @@ pushd ${PIFIRE_INSTALL_PATH}
         python -m pip install uuid
         python -m pip install influxdb-client[ciso]
         python -m pip install apprise
+        python -m pip install numpy
         python -m pip install scikit-fuzzy
         python -m pip install scikit-learn
         python -m pip install ratelimitingfilter
