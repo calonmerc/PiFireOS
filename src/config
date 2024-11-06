@@ -1,6 +1,7 @@
 # setup distro values
 export DIST_NAME=PiFireOS
 export DIST_VERSION=0.3.0
+export BOARD=raspberrypiarm64
 #set base user params
 export BASE_USER=pi
 export BASE_USER_PASSWORD=raspberry
