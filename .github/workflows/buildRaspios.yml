@@ -15,7 +15,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt install coreutils p7zip-full qemu-user-static git -y
+        sudo apt install coreutils p7zip-full qemu-user-static -y
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v4
@@ -45,6 +45,7 @@ jobs:
         sudo apt clean
         sudo modprobe loop
         cd repository/src
+        sudo apt install git -y
         echo PIFIRE_REPO_BRANCH=development >> config.local
         sudo bash -x ./build_dist
 
