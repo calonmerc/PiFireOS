@@ -15,7 +15,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt install coreutils p7zip-full qemu-user-static -y
+        sudo apt install coreutils p7zip-full qemu-user-static git -y
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v4
